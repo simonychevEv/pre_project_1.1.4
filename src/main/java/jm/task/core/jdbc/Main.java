@@ -20,11 +20,13 @@ public class Main {
         userService.saveUser(USER3.getName(), USER3.getLastName(), USER3.getAge());
         userService.saveUser(USER4.getName(), USER4.getLastName(), USER4.getAge());
         // Получение всех User(ов) из таблицы
-        userService.getAllUsers();
-        // Очистка таблицы
-        userService.cleanUsersTable();
+        for (User user: userService.getAllUsers()) {
+            System.out.println(user);
+        }
         // Удаление User по id
         userService.removeUserById(1);
+        // Очистка таблицы
+        userService.cleanUsersTable();
         // Удаление таблицы
         userService.dropUsersTable();
     }
